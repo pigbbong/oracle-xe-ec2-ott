@@ -5,8 +5,12 @@
 - SQL 분석 프로세스 (구독 전환율, 유지율, 시청 패턴, 수익 기여도) 수행
 
 
-# ERD
+<details>
+<summary><h2>EC2 인스턴스 생성</h2></summary>
 ![ERD](./image/ERD.png)
+
+</details>
+
 
 
 <details>
