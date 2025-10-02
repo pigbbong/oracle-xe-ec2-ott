@@ -87,36 +87,36 @@
 <summary><h2>EC2 환경 구축</h2></summary>
 
 ``` 
-## 1. SSH 접속 (키 파일이 있는 경로에서 실행)
+# 1. SSH 접속 (키 파일이 있는 경로에서 실행)
 ssh -i "<your-key.pem>" ec2-user@<public-ip-address>
 
-## 2. 시스템 업데이트
+# 2. 시스템 업데이트
 sudo dnf update -y
 
-## 3. 필요한 패키지 설치
+# 3. 필요한 패키지 설치
 sudo dnf install -y oracle-database-preinstall-21c wget unzip
 
-## 4. Oracle XE 설치 파일 업로드 (로컬 → EC2)
+# 4. Oracle XE 설치 파일 업로드 (로컬 → EC2)
 scp -i "<your-key.pem>" <local-path-to-rpm>/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm ec2-user@<public-ip-address>:/tmp/
 
-## 5. rpm 패키지 설치 (EC2 내부)
+# 5. rpm 패키지 설치 (EC2 내부)
 cd /tmp
 sudo dnf localinstall -y oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
 
-## 6. 초기 설정 및 비밀번호 지정
+# 6. 초기 설정 및 비밀번호 지정
 sudo /etc/init.d/oracle-xe-21c configure
 
-## 7. 서비스 상태 확인
+# 7. 서비스 상태 확인
 ps -ef | grep pmon
 ps -ef | grep tnslsnr
 sudo ss -ltnp | grep 1521
 
-## 8. 방화벽 설정 (필요 시)
+# 8. 방화벽 설정 (필요 시)
 sudo firewall-cmd --add-port=1521/tcp --permanent
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
 
-## 9. Oracle Developer 접속 후 DB 상태 확인
+# 9. Oracle Developer 접속 후 DB 상태 확인
 
 SQL Developer에서 새로운 연결(New Connection)을 생성
 
@@ -130,7 +130,7 @@ SQL Developer에서 새로운 연결(New Connection)을 생성
 연결 후 SQL Worksheet에서 아래 쿼리를 실행해 DB 상태를 확인
 SQL> SELECT host_name, instance_name, version FROM v$instance;
 
-## 10. CSV 파일 업로드 및 권한 설정
+# 10. CSV 파일 업로드 및 권한 설정
 
 1. 업로드 받을 디렉토리 생성 (ec2-user 홈 디렉토리)
 mkdir -p /home/ec2-user/csv_dir
