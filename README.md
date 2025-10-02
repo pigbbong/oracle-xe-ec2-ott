@@ -50,29 +50,29 @@ sudo dnf install -y oracle-database-preinstall-21c wget unzip
 scp -i "<your-key.pem>" <local-path-to-rpm>/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm ec2-user@<public-ip-address>:/tmp/
 
 ## 5. rpm 패키지 설치 (EC2 내부)
-cd /tmp
-sudo dnf localinstall -y oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
+1. cd /tmp
+2. sudo dnf localinstall -y oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
 
 ## 6. 초기 설정 및 비밀번호 지정
 sudo /etc/init.d/oracle-xe-21c configure
 
 ## 7. 서비스 상태 확인
-ps -ef | grep pmon
-ps -ef | grep tnslsnr
-sudo ss -ltnp | grep 1521
+1. ps -ef | grep pmon
+2. ps -ef | grep tnslsnr
+3. sudo ss -ltnp | grep 1521
 
 ## 8. 방화벽 설정 (필요 시)
-sudo firewall-cmd --add-port=1521/tcp --permanent
-sudo firewall-cmd --reload
-sudo firewall-cmd --list-all
+1. sudo firewall-cmd --add-port=1521/tcp --permanent
+2. sudo firewall-cmd --reload
+3. sudo firewall-cmd --list-all
 
 ## 9. Oracle Developer 접속 후 DB 상태 확인
 SQL> SELECT host_name, instance_name, version FROM v$instance;
 
 ## 10. CSV 파일 업로드 및 권한 설정
-mkdir -p /home/ec2-user/csv_dir
-scp -i "<your-key.pem>" <local-path-to-csv>/*.csv ec2-user@<public-ip-address>:/home/ec2-user/csv_dir/
-sudo cp /home/ec2-user/csv_dir/*.csv /opt/oracle/admin/XE/dpdump/
-sudo chown oracle:oinstall /opt/oracle/admin/XE/dpdump/*.csv
-sudo chmod 644 /opt/oracle/admin/XE/dpdump/*.csv
-sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
+1. mkdir -p /home/ec2-user/csv_dir
+2. scp -i "<your-key.pem>" <local-path-to-csv>/*.csv ec2-user@<public-ip-address>:/home/ec2-user/csv_dir/
+3. sudo cp /home/ec2-user/csv_dir/*.csv /opt/oracle/admin/XE/dpdump/
+4. sudo chown oracle:oinstall /opt/oracle/admin/XE/dpdump/*.csv
+5. sudo chmod 644 /opt/oracle/admin/XE/dpdump/*.csv
+6. sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
