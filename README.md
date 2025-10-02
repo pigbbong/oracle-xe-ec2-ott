@@ -27,7 +27,23 @@ project/
 <br>
 ├── data_pipeline/ # 가상 데이터 생성 및 CSV → DB 적재 스크립트
 <br>
+    ├── fake_data.ipynb
+<br>
+    ├── SYS.sql
+<br>
+    ├── ETL.sql
+<br>
+    └── DDL.sql
+<br>
 └── analysis_process/ # SQL 분석 프로세스 및 결과
+<br>
+    ├── TOPIC1.sql
+<br>
+    ├── TOPIC2.sql
+<br>
+    ├── TOPIC3.sql
+<br>
+    └── TOPIC4.sql
 <br>
 
 **실행 순서**  
