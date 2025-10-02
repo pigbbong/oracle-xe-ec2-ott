@@ -16,15 +16,19 @@
 <br>
 
 project/
+<br>
 │
+<br>
 ├── ec2-instance/ # EC2 인스턴스 생성 과정 캡처
+<br>
 ├── ERD/ # ERD 다이어그램
+<br>
 ├── virtual_OTT/ # OTT 가상 데이터 관련 폴더
-│ ├── data_pipeline/ # 가상 데이터 생성 및 CSV → DB 적재 스크립트
-│ └── analysis_process/ # SQL 분석 프로세스 및 결과
-├── EC2.txt # EC2 환경 구축 정리 문서
-└── README.md # 프로젝트 설명 문서
-
+<br>
+├── data_pipeline/ # 가상 데이터 생성 및 CSV → DB 적재 스크립트
+<br>
+└── analysis_process/ # SQL 분석 프로세스 및 결과
+<br>
 
 **실행 순서**  
 1. `virtual_OTT/data_pipeline/` : 가상 데이터 생성 (CSV 파일 생성)  
