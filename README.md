@@ -150,10 +150,6 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 
 
 
-</details>
-
----
-
 # 📊 분석 프로세스
 
 <details>
