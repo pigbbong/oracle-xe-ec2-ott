@@ -86,7 +86,7 @@
 <details>
 <summary><h2>EC2 환경 구축</h2></summary>
 
-
+``` 
 ## 1. SSH 접속 (키 파일이 있는 경로에서 실행)
 ssh -i "<your-key.pem>" ec2-user@<public-ip-address>
 
