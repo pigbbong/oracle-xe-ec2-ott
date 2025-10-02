@@ -6,7 +6,10 @@
 
 
 <details>
-<summary><h2>EC2 인스턴스 생성</h2></summary>
+<summary><h2>ERD 모델링</h2></summary>
+
+<br>
+
 ![ERD](./image/ERD.png)
 
 </details>
