@@ -10,6 +10,34 @@
 
 </details>
 
+<details>
+<summary><h2>폴더 구조 및 실행 순서</h2></summary>
+
+<br>
+
+project/
+│
+├── ec2-instance/ # EC2 인스턴스 생성 과정 캡처
+├── ERD/ # ERD 다이어그램
+├── virtual_OTT/ # OTT 가상 데이터 관련 폴더
+│ ├── data_pipeline/ # 가상 데이터 생성 및 CSV → DB 적재 스크립트
+│ └── analysis_process/ # SQL 분석 프로세스 및 결과
+├── EC2.txt # EC2 환경 구축 정리 문서
+└── README.md # 프로젝트 설명 문서
+
+
+**실행 순서**  
+1. `virtual_OTT/data_pipeline/` : 가상 데이터 생성 (CSV 파일 생성)  
+2. `ec2-instance/` : EC2 인스턴스 생성 과정 확인  
+3. `EC2.txt` : EC2 환경에서 Oracle XE 설치 및 설정  
+4. `virtual_OTT/data_pipeline/` : CSV 업로드 및 외부 테이블 → 내부 테이블 변환  
+5. `ERD/` : ERD 참조 및 제약조건 적용  
+6. `virtual_OTT/analysis_process/` : SQL 분석 프로세스 실행 및 결과 확인  
+
+</details>
+
+
+
 
 <details>
 <summary><h2>ERD 모델링</h2></summary>
