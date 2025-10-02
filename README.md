@@ -34,5 +34,3 @@ Step 5: 네트워크 설정
 Step 6: 스토리지 설정  
 ![EC2 Step6](./image/EC2_instance_step6.png)
 
-### Step 6: 스토리지 설정
-![EC2 Step6](./image/EC2 인스턴스 생성-6.png)
