@@ -146,6 +146,8 @@ sudo chmod 644 /opt/oracle/admin/XE/dpdump/*.csv
 sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 
 
+</details>
+
 
 
 <details>
