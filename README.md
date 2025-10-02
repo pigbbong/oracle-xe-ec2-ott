@@ -16,8 +16,7 @@
 <br>
 
 - project/
-  - ec2-instance/ : EC2 인스턴스 생성 과정 캡처
-  - ERD/ : ERD 다이어그램
+  - image/
   - virtual_OTT/
     - data_pipeline/ : 가상 데이터 생성 및 CSV → DB 적재 스크립트
       - fake_data.ipynb
