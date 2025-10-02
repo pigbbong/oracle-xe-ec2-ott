@@ -116,8 +116,21 @@ sudo firewall-cmd --add-port=1521/tcp --permanent
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
 
-# 9. Oracle Developer 접속 후 DB 상태 확인
-SQL> SELECT host_name, instance_name, version FROM v$instance;
+## 9. Oracle Developer 접속 후 DB 상태 확인
+
+SQL Developer에서 새로운 연결(New Connection)을 생성
+
+- **Connection Name**: 임의로 지정 (예: `EC2-OracleXE`)
+- **Username**: system (또는 생성한 사용자 계정명, 예: `movies`)
+- **Password**: 설치 시 `sudo /etc/init.d/oracle-xe-21c configure` 단계에서 설정한 비밀번호
+- **Hostname**: EC2 퍼블릭 IPv4 주소 (예: `16.xxx.xxx.xxx`)
+- **Port**: 1521
+- **Service Name**: xepdb1
+
+연결 후 SQL Worksheet에서 아래 쿼리를 실행해 DB 상태를 확인
+
+```sql
+SELECT host_name, instance_name, version FROM v$instance;
 
 # 10. CSV 파일 업로드 및 권한 설정
 mkdir -p /home/ec2-user/csv_dir
