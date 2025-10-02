@@ -128,9 +128,7 @@ SQL Developer에서 새로운 연결(New Connection)을 생성
 - Service Name: xepdb1
 
 연결 후 SQL Worksheet에서 아래 쿼리를 실행해 DB 상태를 확인
-
-```sql
-SELECT host_name, instance_name, version FROM v$instance;
+SQL> SELECT host_name, instance_name, version FROM v$instance;
 
 # 10. CSV 파일 업로드 및 권한 설정
 mkdir -p /home/ec2-user/csv_dir
