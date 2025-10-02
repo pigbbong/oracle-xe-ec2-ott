@@ -87,31 +87,31 @@
 <summary><h2>EC2 환경 구축</h2></summary>
 
 ```bash
-# 1. SSH 접속 (키 파일이 있는 경로에서 실행)
+## 1. SSH 접속 (키 파일이 있는 경로에서 실행)
 ssh -i "<your-key.pem>" ec2-user@<public-ip-address>
 
-# 2. 시스템 업데이트
+## 2. 시스템 업데이트
 sudo dnf update -y
 
-# 3. 필요한 패키지 설치
+## 3. 필요한 패키지 설치
 sudo dnf install -y oracle-database-preinstall-21c wget unzip
 
-# 4. Oracle XE 설치 파일 업로드 (로컬 → EC2)
+## 4. Oracle XE 설치 파일 업로드 (로컬 → EC2)
 scp -i "<your-key.pem>" <local-path-to-rpm>/oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm ec2-user@<public-ip-address>:/tmp/
 
-# 5. rpm 패키지 설치 (EC2 내부)
+## 5. rpm 패키지 설치 (EC2 내부)
 cd /tmp
 sudo dnf localinstall -y oracle-database-xe-21c-1.0-1.ol8.x86_64.rpm
 
-# 6. 초기 설정 및 비밀번호 지정
+## 6. 초기 설정 및 비밀번호 지정
 sudo /etc/init.d/oracle-xe-21c configure
 
-# 7. 서비스 상태 확인
+## 7. 서비스 상태 확인
 ps -ef | grep pmon
 ps -ef | grep tnslsnr
 sudo ss -ltnp | grep 1521
 
-# 8. 방화벽 설정 (필요 시)
+## 8. 방화벽 설정 (필요 시)
 sudo firewall-cmd --add-port=1521/tcp --permanent
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-all
@@ -130,7 +130,7 @@ SQL Developer에서 새로운 연결(New Connection)을 생성
 연결 후 SQL Worksheet에서 아래 쿼리를 실행해 DB 상태를 확인
 SQL> SELECT host_name, instance_name, version FROM v$instance;
 
-# 10. CSV 파일 업로드 및 권한 설정
+## 10. CSV 파일 업로드 및 권한 설정
 
 1. 업로드 받을 디렉토리 생성 (ec2-user 홈 디렉토리)
 mkdir -p /home/ec2-user/csv_dir
@@ -151,7 +151,7 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 <details>
 <summary><h2>분석 프로세스</h2></summary>
 
-<details>
+
 <summary><h3>Topic 1: 고객들의 플랜 업그레이드 비율</h3></summary>
 
 **분석 항목**  
@@ -164,9 +164,7 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 - Free 가입자의 약 79%가 1개월 내 전환, 95% 이상이 2개월 내 전환  
 - 업그레이드 후 3개월 이상 연속 유료 유지 비율 ≈ 70%
 
-</details>
 
-<details>
 <summary><h3>Topic 2: 무료 가입 고객의 시청 패턴 변화</h3></summary>
 
 **분석 항목**  
@@ -178,9 +176,7 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 - 무료 가입자는 평균 1.4편 → 유료 전환 직후 2.1편 (65% 증가)  
 - 전환 직후 유료 콘텐츠 비중은 약 3.8%  
 
-</details>
 
-<details>
 <summary><h3>Topic 3: 시청 횟수와 유료 플랜 유지 기간의 관계</h3></summary>
 
 **분석 항목**  
@@ -192,9 +188,7 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 - Medium: 평균적 유지  
 - Low: 시청 적지만 장기 유지 ("깜빡 구독")  
 
-</details>
 
-<details>
 <summary><h3>Topic 4: 수익 기여도 분석</h3></summary>
 
 **분석 항목**  
@@ -206,6 +200,5 @@ sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 - Premium ≈ 1억7천만 / Basic ≈ 9천만 / Free ≈ 65만  
 - 20~30대가 전체 매출을 주도, ARPU 세대별 차이는 크지 않음  
 
-</details>
 
 </details>
