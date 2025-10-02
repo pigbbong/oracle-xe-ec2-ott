@@ -8,7 +8,28 @@
 ERD
 ![ERD](./image/ERD.png)
 
+## EC2 인스턴스 생성과 환경 구축 
 
-EC2 인스턴스 생성과 환경 구축
-EC2 인스턴스는 Oracle Linux 8 (AMI) 기반으로 구성했습니다.  
-![ec2-instance](./image/EC2 인스턴스 생성-1.png)
+### Step 1: EC2 인스턴스 시작
+![EC2 Step1](./image/EC2 인스턴스 생성-1.png)
+
+### Step 2-1: AMI 선택
+![EC2 Step2-1](./image/EC2 인스턴스 생성-2-1.png)
+
+### Step 2-2: AMI 상세
+![EC2 Step2-2](./image/EC2 인스턴스 생성-2-2.png)
+
+### Step 3: 인스턴스 유형 선택
+![EC2 Step3](./image/EC2 인스턴스 생성-3.png)
+
+### Step 4: 키 페어 생성
+![EC2 Step4](./image/EC2 인스턴스 생성-4.png)
+
+### Step 4-2: 키 페어 상세
+![EC2 Step4-2](./image/EC2 인스턴스 생성-4-2.png)
+
+### Step 5: 네트워크 설정
+![EC2 Step5](./image/EC2 인스턴스 생성-5.png)
+
+### Step 6: 스토리지 설정
+![EC2 Step6](./image/EC2 인스턴스 생성-6.png)
