@@ -31,12 +31,11 @@
 
 
 **실행 순서**  
-1. `virtual_OTT/data_pipeline/` : 가상 데이터 생성 (CSV 파일 생성)  
-2. `ec2-instance/` : EC2 인스턴스 생성 과정 확인  
-3. `EC2.txt` : EC2 환경에서 Oracle XE 설치 및 설정  
-4. `virtual_OTT/data_pipeline/` : CSV 업로드 및 외부 테이블 → 내부 테이블 변환  
-5. `ERD/` : ERD 참조 및 제약조건 적용  
-6. `virtual_OTT/analysis_process/` : SQL 분석 프로세스 실행 및 결과 확인  
+1. fake_data.ipynb 에서 가상 데이터 생성 (csv 파일 생성)
+2. EC2 인스턴스 생성 과정 확인  
+3. EC2 환경 구축 확인
+4. ETL, DDL에서 CSV 파일 적재 및 외부 테이블 → 내부 테이블 변환  
+6. virtual_OTT/analysis_process/에서 SQL 분석 프로세스 실행 및 결과 확인  
 
 </details>
 
