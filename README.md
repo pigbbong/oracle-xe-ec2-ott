@@ -144,7 +144,7 @@ sudo chown oracle:oinstall /opt/oracle/admin/XE/dpdump/*.csv
 sudo chmod 644 /opt/oracle/admin/XE/dpdump/*.csv
 6. 최종 확인
 sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
-
+```
 </details>
 
 
