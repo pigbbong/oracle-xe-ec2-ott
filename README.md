@@ -16,7 +16,7 @@
 ## Step 2-1: AMI 선택  
 ![EC2 Step2-1](./image/EC2_instance_step2-1.png)
 
-## Step 2-2: AMI 상세  
+## Step 2-2: 구독한 AMI
 ![EC2 Step2-2](./image/EC2_instance_step2-2.png)
 
 ## Step 3: 인스턴스 유형 선택  
