@@ -11,4 +11,4 @@ ERD
 
 EC2 인스턴스 생성과 환경 구축
 EC2 인스턴스는 Oracle Linux 8 (AMI) 기반으로 구성했습니다.  
-[ec2-instance](./image/ec2-instance)
+[ec2-instance](./image/EC2 인스턴스 생성)
