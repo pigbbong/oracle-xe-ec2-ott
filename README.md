@@ -14,23 +14,22 @@
 <summary><h2>폴더 구조 및 실행 순서</h2></summary>
 
 <br>
-'''
-project/
-│
-├── ec2-instance/ # EC2 인스턴스 생성 과정 캡처
-├── ERD/ # ERD 다이어그램
-├── virtual_OTT/ # OTT 가상 데이터 관련 폴더
-│ ├── data_pipeline/ # 가상 데이터 생성 및 CSV → DB 적재 스크립트
-│ │ ├── fake_data.ipynb
-│ │ ├── SYS.sql
-│ │ ├── ETL.sql
-│ │ └── DDL.sql
-│ └── analysis_process/ # SQL 분석 프로세스 및 결과
-│ ├── TOPIC1.sql
-│ ├── TOPIC2.sql
-│ ├── TOPIC3.sql
-│ └── TOPIC4.sql
-'''
+
+- project/
+  - ec2-instance/ : EC2 인스턴스 생성 과정 캡처
+  - ERD/ : ERD 다이어그램
+  - virtual_OTT/
+    - data_pipeline/ : 가상 데이터 생성 및 CSV → DB 적재 스크립트
+      - fake_data.ipynb
+      - SYS.sql
+      - ETL.sql
+      - DDL.sql
+    - analysis_process/ : SQL 분석 프로세스 및 결과
+      - TOPIC1.sql
+      - TOPIC2.sql
+      - TOPIC3.sql
+      - TOPIC4.sql
+
 
 **실행 순서**  
 1. `virtual_OTT/data_pipeline/` : 가상 데이터 생성 (CSV 파일 생성)  
