@@ -1,4 +1,3 @@
-<details>
 <summary><h2>개요</h2></summary>
 
 - AWS EC2에 Oracle Linux 8 + Oracle Database XE 21c 설치  
@@ -6,7 +5,7 @@
 - CSV 업로드 → 외부 테이블 적재 → 내부 테이블 변환 및 제약조건 추가  
 - 간단한 SQL 분석 프로세스 (구독 전환율, 유지율, 시청 패턴, 수익 기여도) 수행
 
-### 🎯 참고
+### 참고
  본 프로젝트는 **가상 OTT 데이터 모델링 및 Oracle 기반 데이터 집계 실습**을 통해, 데이터베이스 엔지니어링의 핵심 개념과 구조 설계를 직접 구현한 **학습용 프로젝트**입니다.
 상용 수준의 Spark나 Oracle EE 환경은 비용과 리소스 제약으로 인해 직접 구현이 어려웠으므로,
 **주어진 여건에서 가능한 최선의 환경인 AWS EC2와 Oracle XE**를 활용하여
@@ -15,10 +14,6 @@ DB 엔지니어링의 핵심 과정을 간단히 구현하고 실습하는 것�
 SQL 기반 집계 로직 설계 등 **실제 엔지니어링 업무의 축소형 환경**을 구축하였습니다.
 
 
-</details>
-
-
-<details>
 <summary><h2>폴더 구조 및 실행 순서</h2></summary>
 
 - project/
@@ -42,18 +37,12 @@ SQL 기반 집계 로직 설계 등 **실제 엔지니어링 업무의 축소형
 4. ETL, DDL에서 CSV 파일 적재 및 외부 테이블 → 내부 테이블 변환  
 5. virtual_OTT/analysis_process/에서 SQL 분석 프로세스 실행 및 결과 확인  
 
-</details>
 
-
-<details>
 <summary><h2>ERD 모델링</h2></summary>
 
 ![ERD](./image/ERD.png)
 
-</details>
 
-
-<details>
 <summary><h2>EC2 인스턴스 생성</h2></summary>
 
 ### Step 1: EC2 인스턴스 시작  
@@ -80,10 +69,7 @@ SQL 기반 집계 로직 설계 등 **실제 엔지니어링 업무의 축소형
 ### Step 6: 스토리지 설정  
 ![EC2 Step6](./image/EC2_instance_step6.png)
 
-</details>
 
-
-<details>
 <summary><h2>EC2 환경 구축</h2></summary>
 
 ```plaintext
@@ -145,4 +131,3 @@ sudo chmod 644 /opt/oracle/admin/XE/dpdump/*.csv
 6. 최종 확인
 sudo ls -l /opt/oracle/admin/XE/dpdump/ | grep csv
 ```
-</details>
